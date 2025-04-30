@@ -1,0 +1,24 @@
+{
+    "manifest_version":3,
+    "name":"FraudLink",
+    "description":"Check if a link is fraudulent instantly!",
+    "version":"1.0",
+    "permission":["tabs","scripting","activeTab"],
+    "action":{
+        "default_popup":"popup/popup.html",
+        "default_icon":{
+            "50":"popup/assets/logo.png"
+        }
+    },
+    "permissions":["storage"],
+    "host_permissions":["<all_urls>"],
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+            "js":["content.js"]
+        }
+    ]
+}
